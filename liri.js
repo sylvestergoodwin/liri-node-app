@@ -26,9 +26,10 @@ function readFile()
 // create the Twit object 
 function getTwitterCreds()
 {
-	return  new Twit(keys.twitterKeys);
+ var K = keys.twitterKeys; 
+ K.access_token = K.access_token_key;
+ return Twit(K);
 }
-
 
 // process the "my-tweets" command
 function myTweets(user)
